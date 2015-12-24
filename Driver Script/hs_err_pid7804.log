@@ -1,0 +1,228 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x24eed66f, pid=7804, tid=7376
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b19 mixed mode windows-x86)
+# Problematic frame:
+# C  0x24eed66f
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000004
+
+Registers:
+EAX=0x00000000, EBX=0x3115cc00, ECX=0x319cdda0, EDX=0x31116790
+ESP=0x319cdd8c, EBP=0x319cddf8, ESI=0x319cdda4, EDI=0x31116b3c
+EIP=0x24eed66f, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x319cdd8c)
+0x319cdd8c:   31116b3c 3111678c 24e6054c 319cdda0
+0x319cdd9c:   275caaa8 00000000 00000000 00000000
+0x319cddac:   319cdde0 24e83681 24e836b9 3111678c
+0x319cddbc:   3115cc00 319cdde0 ffffffff 6d314043
+0x319cddcc:   3115ccf4 319cdde0 256b3b65 3115ccf4
+0x319cdddc:   319cdde0 275caaa8 00160010 00000005
+0x319cddec:   256b2ee4 ffff0023 0d840358 319cde28
+0x319cddfc:   256b6a94 76f55e4c 752e6872 256b2cd4 
+
+Instructions: (pc=0x24eed66f)
+0x24eed65f:   57 50 ff 15 5c 51 f5 24 8b 4c 24 0c 89 01 89 06
+0x24eed66f:   8b 78 04 85 ff 75 04 33 c0 eb 25 8b 09 8b 89 98 
+
+
+Stack: [0x318d0000,0x319d0000],  sp=0x319cdd8c,  free space=1015k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x24eed66f
+J  java.nio.channels.OverlappingFileLockException.<init>()V
+J  sun.nio.ch.FileChannelImpl$SharedFileLockTable.checkList(Ljava/util/List;JJ)V
+J  sun.nio.ch.FileChannelImpl$SharedFileLockTable.add(Ljava/nio/channels/FileLock;)V
+J  sun.nio.ch.FileChannelImpl.lock(JJZ)Ljava/nio/channels/FileLock;
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 257K [0x27590000, 0x27690000, 0x27a70000)
+  eden space 896K,  27% used [0x27590000, 0x275cd338, 0x27670000)
+  from space 64K,  19% used [0x27670000, 0x27673148, 0x27680000)
+  to   space 64K,   0% used [0x27680000, 0x27680000, 0x27690000)
+ tenured generation   total 4096K, used 2300K [0x27a70000, 0x27e70000, 0x2b590000)
+   the space 4096K,  56% used [0x27a70000, 0x27caf180, 0x27caf200, 0x27e70000)
+ compacting perm gen  total 12288K, used 10405K [0x2b590000, 0x2c190000, 0x2f590000)
+   the space 12288K,  84% used [0x2b590000, 0x2bfb9690, 0x2bfb9800, 0x2c190000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00805000 	C:\Program Files\HP\QuickTest Professional\bin\QTPro.exe
+0x76f10000 - 0x7704c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76e30000 - 0x76f04000 	C:\Windows\system32\kernel32.dll
+0x752e0000 - 0x7532a000 	C:\Windows\system32\KERNELBASE.dll
+0x603c0000 - 0x60493000 	C:\Program Files\HP\QuickTest Professional\bin\MicMFCLibU.dll
+0x770c0000 - 0x77117000 	C:\Windows\system32\SHLWAPI.dll
+0x77070000 - 0x770be000 	C:\Windows\system32\GDI32.dll
+0x754b0000 - 0x75579000 	C:\Windows\system32\USER32.dll
+0x75580000 - 0x7558a000 	C:\Windows\system32\LPK.dll
+0x76510000 - 0x765ad000 	C:\Windows\system32\USP10.dll
+0x76970000 - 0x76a1c000 	C:\Windows\system32\msvcrt.dll
+0x619a0000 - 0x61aaf000 	C:\Windows\WinSxS\x86_microsoft.vc80.mfc_1fc8b3b9a1e18e3b_8.0.50727.6195_none_cbf5e994470a1a8f\MFC80U.DLL
+0x724a0000 - 0x7253b000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a\MSVCR80.dll
+0x76ab0000 - 0x76b50000 	C:\Windows\system32\ADVAPI32.dll
+0x77120000 - 0x77139000 	C:\Windows\SYSTEM32\sechost.dll
+0x76460000 - 0x76501000 	C:\Windows\system32\RPCRT4.dll
+0x76bd0000 - 0x76d2c000 	C:\Windows\system32\ole32.dll
+0x76a20000 - 0x76aaf000 	C:\Windows\system32\OLEAUT32.dll
+0x5ecf0000 - 0x5eea3000 	C:\Program Files\HP\QuickTest Professional\bin\OG1000ASU.dll
+0x75590000 - 0x761d9000 	C:\Windows\system32\SHELL32.dll
+0x750e0000 - 0x75164000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7600.16385_none_ebf82fc36c758ad5\COMCTL32.dll
+0x62090000 - 0x6211a000 	C:\Windows\system32\ODBC32.dll
+0x5c860000 - 0x5c877000 	C:\Program Files\HP\QuickTest Professional\bin\RWUXThemeSU.dll
+0x65390000 - 0x653ac000 	C:\Windows\system32\oledlg.dll
+0x72410000 - 0x72497000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a\MSVCP80.dll
+0x5bd40000 - 0x5bdb3000 	C:\Program Files\HP\QuickTest Professional\bin\SFL300ASU.dll
+0x76b50000 - 0x76bcb000 	C:\Windows\system32\comdlg32.dll
+0x6e750000 - 0x6e7a1000 	C:\Windows\system32\WINSPOOL.DRV
+0x604a0000 - 0x604ad000 	C:\Program Files\HP\QuickTest Professional\bin\MicLogFile.dll
+0x6d840000 - 0x6d85b000 	C:\Windows\WinSxS\x86_microsoft.vc80.atl_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d1cb102c435421de\ATL80.DLL
+0x60360000 - 0x60377000 	C:\Program Files\HP\QuickTest Professional\bin\MicPackVariant.dll
+0x56c70000 - 0x56c81000 	C:\Program Files\HP\QuickTest Professional\bin\zlibU.dll
+0x57670000 - 0x577f7000 	C:\Program Files\HP\QuickTest Professional\bin\xerces-c_1_6_0.dll
+0x597f0000 - 0x5987e000 	C:\Program Files\HP\QuickTest Professional\bin\VBScriptTreeU.dll
+0x60d30000 - 0x60f45000 	C:\Program Files\HP\QuickTest Professional\bin\lsapiw32.dll
+0x73200000 - 0x73211000 	C:\Windows\system32\NETAPI32.dll
+0x74870000 - 0x74879000 	C:\Windows\system32\netutils.dll
+0x74e80000 - 0x74e99000 	C:\Windows\system32\srvcli.dll
+0x731f0000 - 0x731ff000 	C:\Windows\system32\wkscli.dll
+0x726a0000 - 0x726a7000 	C:\Windows\system32\WSOCK32.dll
+0x76750000 - 0x76785000 	C:\Windows\system32\WS2_32.dll
+0x77050000 - 0x77056000 	C:\Windows\system32\NSI.dll
+0x735e0000 - 0x735fc000 	C:\Windows\system32\iphlpapi.dll
+0x735c0000 - 0x735c7000 	C:\Windows\system32\WINNSI.DLL
+0x62bb0000 - 0x62bd9000 	C:\Program Files\HP\QuickTest Professional\bin\ExportTestWithResourcesU.dll
+0x74f00000 - 0x74f08000 	C:\Windows\system32\Secur32.dll
+0x74f40000 - 0x74f5a000 	C:\Windows\system32\SSPICLI.DLL
+0x64170000 - 0x6452d000 	C:\Program Files\HP\QuickTest Professional\bin\BCGCBPRO956u.dll
+0x73220000 - 0x73252000 	C:\Windows\system32\WINMM.dll
+0x74120000 - 0x742b0000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7600.16385_none_72fc7cbf861225ca\gdiplus.dll
+0x65140000 - 0x65161000 	C:\Windows\system32\MSVFW32.dll
+0x754a0000 - 0x754a5000 	C:\Windows\system32\PSAPI.DLL
+0x76440000 - 0x7645f000 	C:\Windows\system32\IMM32.DLL
+0x768a0000 - 0x7696c000 	C:\Windows\system32\MSCTF.dll
+0x70b40000 - 0x70b4e000 	C:\Windows\WinSxS\x86_microsoft.vc80.mfcloc_1fc8b3b9a1e18e3b_8.0.50727.6195_none_03ce2c72205943d3\MFC80ENU.DLL
+0x65100000 - 0x65138000 	C:\Windows\system32\odbcint.dll
+0x740b0000 - 0x740f0000 	C:\Windows\system32\UXTHEME.DLL
+0x73c80000 - 0x73c93000 	C:\Windows\system32\dwmapi.dll
+0x739d0000 - 0x739d5000 	C:\Windows\system32\msimg32.dll
+0x74fe0000 - 0x74fec000 	C:\Windows\system32\CRYPTBASE.dll
+0x610d0000 - 0x610ef000 	C:\Program Files\HP\QuickTest Professional\bin\Log4netWrap.dll
+0x6f800000 - 0x6f846000 	C:\Windows\SYSTEM32\MSCOREE.DLL
+0x65080000 - 0x650fd000 	C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.6195_none_d09154e044272b9a\msvcm80.dll
+0x6ab30000 - 0x6b0c1000 	C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorwks.dll
+0x75060000 - 0x7506b000 	C:\Windows\system32\profapi.dll
+0x68880000 - 0x69378000 	C:\Windows\assembly\NativeImages_v2.0.50727_32\mscorlib\8c1770d45c63cf5c462eeb945ef9aa5d\mscorlib.ni.dll
+0x6ebb0000 - 0x6ec0b000 	C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorjit.dll
+0x74ae0000 - 0x74af6000 	C:\Windows\system32\CRYPTSP.dll
+0x74880000 - 0x748bb000 	C:\Windows\system32\rsaenh.dll
+0x75050000 - 0x7505e000 	C:\Windows\system32\RpcRtRemote.dll
+0x65190000 - 0x651d6000 	C:\Program Files\HP\QuickTest Professional\bin\log4net.dll
+0x743b0000 - 0x743b9000 	C:\Windows\system32\VERSION.dll
+0x767c0000 - 0x76843000 	C:\Windows\system32\CLBCatQ.DLL
+0x570d0000 - 0x570de000 	C:\Program Files\HP\QuickTest Professional\bin\XmlIfsComWrap.dll
+0x74ff0000 - 0x7504f000 	C:\Windows\system32\sxs.dll
+0x6a3c0000 - 0x6a3d6000 	C:\Program Files\HP\QuickTest Professional\bin\NetXMLData.dll
+0x6d0b0000 - 0x6d0ba000 	C:\Program Files\HP\QuickTest Professional\bin\XMLDataIfsLib.dll
+0x69760000 - 0x69ef9000 	C:\Windows\assembly\NativeImages_v2.0.50727_32\System\5ba3bf5367fc012300c6566f20cb7f54\System.ni.dll
+0x04cb0000 - 0x051e6000 	C:\Windows\assembly\NativeImages_v2.0.50727_32\System.Xml\5dd9f783008543df3e642ff1e99de4e8\System.Xml.ni.dll
+0x59d60000 - 0x59d84000 	C:\Program Files\HP\QuickTest Professional\bin\TulipAppInfo.dll
+0x6d470000 - 0x6d47c000 	C:\Program Files\HP\QuickTest Professional\bin\MicNetUtils.dll
+0x646e0000 - 0x64846000 	C:\Program Files\HP\QuickTest Professional\bin\AQTProductInfo.dll
+0x71fe0000 - 0x72220000 	C:\Windows\system32\msi.dll
+0x611b0000 - 0x611d8000 	C:\Program Files\HP\QuickTest Professional\bin\lic_mng.dll
+0x73a20000 - 0x73a30000 	C:\Windows\system32\NLAapi.dll
+0x74aa0000 - 0x74adc000 	C:\Windows\System32\mswsock.dll
+0x74960000 - 0x749a4000 	C:\Windows\system32\DNSAPI.dll
+0x72250000 - 0x72258000 	C:\Windows\System32\winrnr.dll
+0x72240000 - 0x72250000 	C:\Windows\system32\napinsp.dll
+0x72220000 - 0x72232000 	C:\Windows\system32\pnrpnsp.dll
+0x6a7b0000 - 0x6a7b8000 	C:\Windows\system32\netbios.dll
+0x72c40000 - 0x72c78000 	C:\Windows\System32\fwpuclnt.dll
+0x71a10000 - 0x71a16000 	C:\Windows\system32\rasadhlp.dll
+0x74440000 - 0x74445000 	C:\Windows\System32\wshtcpip.dll
+0x64970000 - 0x64a68000 	C:\Program Files\HP\QuickTest Professional\bin\AddinManager.dll
+0x60870000 - 0x6087a000 	C:\Program Files\HP\QuickTest Professional\bin\MfxApplicationU.dll
+0x5b640000 - 0x5b666000 	C:\Program Files\HP\QuickTest Professional\bin\StdAddIn.dll
+0x5a6e0000 - 0x5a7d5000 	C:\Program Files\HP\QuickTest Professional\bin\TEAPackage.dll
+0x58e20000 - 0x58e71000 	C:\Program Files\HP\QuickTest Professional\bin\WebAddIn.dll
+0x62d00000 - 0x62d0b000 	C:\Program Files\HP\QuickTest Professional\bin\Encode.dll
+0x5a090000 - 0x5a09a000 	C:\Program Files\HP\QuickTest Professional\bin\thrdutil.dll
+0x5ff70000 - 0x5ff83000 	C:\Program Files\HP\QuickTest Professional\bin\mmalloc_logic.dll
+0x65270000 - 0x65282000 	C:\Program Files\HP\QuickTest Professional\bin\ToolkitManager.dll
+0x6c370000 - 0x6c37a000 	C:\Program Files\HP\QuickTest Professional\bin\ToolkitInterfaces.dll
+0x69f50000 - 0x69f58000 	C:\Program Files\HP\QuickTest Professional\bin\Utils.dll
+0x58410000 - 0x5841a000 	C:\Program Files\HP\QuickTest Professional\bin\WIAgentLogFileU.dll
+0x5e3a0000 - 0x5e42d000 	C:\Windows\Microsoft.NET\Framework\v2.0.50727\diasymreader.dll
+0x5daf0000 - 0x5db75000 	C:\Program Files\HP\QuickTest Professional\bin\QTApplicationObj.dll
+0x70d60000 - 0x70d72000 	C:\Windows\system32\MPR.dll
+0x59f70000 - 0x5a006000 	C:\Program Files\HP\QuickTest Professional\bin\ToDoTask.dll
+0x5d8b0000 - 0x5daac000 	C:\Program Files\HP\QuickTest Professional\bin\QTDocumentObj.dll
+0x5d000000 - 0x5d031000 	C:\Program Files\HP\QuickTest Professional\bin\QTRRManagerObj.dll
+0x5cef0000 - 0x5cf13000 	C:\Program Files\HP\QuickTest Professional\bin\QualityCenterManager.dll
+0x5a960000 - 0x5aa6e000 	C:\Program Files\HP\QuickTest Professional\bin\TDExtendedAPI.dll
+0x5fe80000 - 0x5feac000 	C:\Program Files\HP\QuickTest Professional\bin\mosifs32.dll
+0x61f70000 - 0x6208c000 	C:\Windows\system32\MFC42.DLL
+0x65650000 - 0x65669000 	C:\Windows\system32\OLEPRO32.DLL
+0x75360000 - 0x75495000 	C:\Windows\system32\urlmon.dll
+0x75190000 - 0x752ac000 	C:\Windows\system32\CRYPT32.dll
+0x750d0000 - 0x750dc000 	C:\Windows\system32\MSASN1.dll
+0x761e0000 - 0x763d9000 	C:\Windows\system32\iertutil.dll
+0x736c0000 - 0x736d4000 	C:\Windows\system32\ATL.DLL
+0x73080000 - 0x730e6000 	C:\Windows\system32\MSVCP60.dll
+0x65220000 - 0x6526e000 	C:\Program Files\HP\QuickTest Professional\bin\QTOTAWrapper.dll
+0x696d0000 - 0x696dc000 	C:\Program Files\HP\QuickTest Professional\bin\OTAWrapperLib.dll
+0x5ca40000 - 0x5ca73000 	C:\Program Files\HP\QuickTest Professional\bin\Repositorisloader.dll
+0x5a8c0000 - 0x5a8d5000 	C:\Program Files\HP\QuickTest Professional\bin\TDPierInTulip.dll
+0x5a840000 - 0x5a8a5000 	C:\Program Files\HP\QuickTest Professional\bin\TDSerializeMgr.dll
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:C:\PROGRA~1\Java\JRE16~1.0_0\lib\deploy.jar;C:\PROGRA~1\Java\JRE16~1.0_0\lib\plugin.jar -Xmx64m -Djavaplugin.maxHeapSize=64m -Xverify:remote -Djavaplugin.version=1.6.0_05 -Djavaplugin.nodotversion=160_05 -Dbrowser=sun.plugin -DtrustProxy=true -Dapplication.home=C:\PROGRA~1\Java\JRE16~1.0_0 -Djavaplugin.vm.options=-Djava.class.path=C:\PROGRA~1\Java\JRE16~1.0_0\classes -Xbootclasspath/a:C:\PROGRA~1\Java\JRE16~1.0_0\lib\deploy.jar;C:\PROGRA~1\Java\JRE16~1.0_0\lib\plugin.jar -Xmx64m -Djavaplugin.maxHeapSize=64m -Xverify:remote -Djavaplugin.version=1.6.0_05 -Djavaplugin.nodotversion=160_05 -Dbrowser=sun.plugin -DtrustProxy=true -Dapplication.home=C:\PROGRA~1\Java\JRE16~1.0_0  -Xbootclasspath/p:C:\PROGRA~1\HP\QUICKT~1\bin\ 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+_JAVA_OPTIONS=-Xbootclasspath/p:C:\PROGRA~1\HP\QUICKT~1\bin\
+CLASSPATH=C:\PROGRA~1\HP\QUICKT~1\bin\;
+PATH=C:\PROGRA~1\Java\JRE16~1.0_0\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\HP\QuickTest Professional\bin\;.
+USERNAME=321063
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 7 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2097151k(1687904k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b19) for windows-x86 JRE (1.6.0_05-b13), built on Feb 22 2008 01:16:53 by "java_re" with MS VC++ 7.1
+
+time: Fri Oct 04 18:33:05 2013
+elapsed time: 3150 seconds
+

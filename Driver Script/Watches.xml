@@ -1,0 +1,7 @@
+﻿<Properties>
+  <WatchEntry0 value="TRIM(objCurrentDataRecSet.Fields(strFieldName))" />
+  <WatchEntry1 value="strFieldName" />
+  <WatchEntry2 value="Environment.Value(&quot;CurrentField&quot;)" />
+  <WatchEntry3 value="TRIM(objCurrentDataRecSet.Fields(strFieldName))" />
+  <WatchEntry4 value="Val" />
+</Properties>
